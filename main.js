@@ -1,6 +1,6 @@
 const $gridNumber = document.querySelector("input")
 const $grid = document.querySelector(".grid")
-const $label = document.querySelector("label")
+const $sizeValue = document.querySelector(".size-value")
 const $rainbowDrawing = document.querySelector(".rainbow-drawing")
 const $clearButton = document.querySelector(".clear")
 
@@ -21,7 +21,7 @@ function makeGrid() {
 }
 
 function changeLabelValue() {
-    $label.innerText = `${$gridNumber.value} x ${$gridNumber.value}`
+    $sizeValue.innerText = `${$gridNumber.value} x ${$gridNumber.value}`
 }
 
 
@@ -42,8 +42,16 @@ function getRandomHue() {
 }
 
 function clearGrid () {
+    makeButtonEfect()
     const $squares = document.querySelectorAll(".square")
-    $squares.forEach((square) => square.style.backgroundColor = "white" )
+    $squares.forEach((square) => square.style.backgroundColor = "rgb(212, 206, 206)" )
+}
+
+function makeButtonEfect () {
+    $clearButton.classList.add("clicked")
+    setTimeout(function() {
+    $clearButton.classList.remove("clicked")
+    }, 500)
 }
 
 $gridNumber.addEventListener("change", makeGrid)
