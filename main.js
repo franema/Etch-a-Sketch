@@ -2,6 +2,7 @@ const $gridNumber = document.querySelector("input")
 const $grid = document.querySelector(".grid")
 const $sizeValue = document.querySelector(".size-value")
 const $rainbowDrawing = document.querySelector(".rainbow-drawing")
+const $eraser = document.querySelector(".eraser")
 const $clearButton = document.querySelector(".clear")
 
 function getGridValue($gridNumber) {
@@ -31,9 +32,12 @@ function changeColor(e) {
         if ($rainbowDrawing.checked) {
             const hue = getRandomHue()
             $div.style.backgroundColor = `hsl(${hue}, 100%, 50%)`
+        } else if ($eraser.checked) {
+            $div.style.backgroundColor = "rgb(212, 206, 206)"
         } else {
             $div.style.backgroundColor = "black"
         }
+
     }
 }
 
@@ -41,18 +45,20 @@ function getRandomHue() {
     return Math.floor(Math.random() * 361)
 }
 
-function clearGrid () {
+function clearGrid() {
     makeButtonEfect()
     const $squares = document.querySelectorAll(".square")
-    $squares.forEach((square) => square.style.backgroundColor = "rgb(212, 206, 206)" )
+    $squares.forEach((square) => square.style.backgroundColor = "rgb(212, 206, 206)")
 }
 
-function makeButtonEfect () {
+function makeButtonEfect() {
     $clearButton.classList.add("clicked")
-    setTimeout(function() {
-    $clearButton.classList.remove("clicked")
+    setTimeout(function () {
+        $clearButton.classList.remove("clicked")
     }, 500)
 }
+
+
 
 $gridNumber.addEventListener("change", makeGrid)
 $grid.addEventListener("mouseover", changeColor)
