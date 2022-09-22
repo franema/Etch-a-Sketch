@@ -4,20 +4,41 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Etch-a-Sketch</title>
+    <title>Etch-A-Sketch</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <script src='main.js' defer></script>
 </head>
 
 <body>
+    <h1>Etch-A-Sketch</h1>
+    <div class="board">
+        <div class="controls">
+            <h2>Controls</h2>
+            <div class="grid-value">
+                <input type="range" value="16" min="4" step="4" max="64">
+                <label class="size-value" for="input">16 x 16</label>
+            </div>
+            <div class="black-checkbox">
+                <input class="black-drawing" type="radio" name="pen" checked>
+                <label for="checkbox">Black</label>
+            </div>
+            <div class="rainbow-checkbox">
+                <input class="rainbow-drawing" type="radio" name="pen">
+                <label for="checkbox">Rainbow</label>
+            </div>
+            <div class="eraser-checkbox">
+                <input class="eraser" type="radio" name="pen">
+                <label for="checkbox">Eraser</label>
+            </div>
+            <button class="clear">Clear</button>
+        </div>
+        <div class="grid">
 
-    <div class="grid">
-
+        </div>
     </div>
 
-    <input type="range" value="16" min="4" step="4" max="64">
-    <label for="input">16 x 16</label>
+
 </body>
 
 </html>
